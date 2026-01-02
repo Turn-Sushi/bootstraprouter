@@ -6,7 +6,11 @@ const Page1 = () => {
     // const data = arr[index]
     // console.log(data)
     // location.href = 'Select.html';
-    navigate('page2', {state: data})
+    if(data==="save") {
+      navigate('page3')
+    } else {
+      navigate('page2', {state: data})
+    }
   }
   const arr = [
     { "key":1, "name":"스티븐", "email":"jobs@shellfolder.com", "regDate":"2023-02-28", "pwd": "1", "gender": true },
@@ -19,7 +23,7 @@ const Page1 = () => {
     <div className="container mt-3">
       <h1 className="display-1 text-center">사용자 목록</h1>
       <div className="btn-group">
-        <a href="Create.html" className="btn btn-primary">사용자 추가</a>
+        <button type="submit" className="btn btn-primary" onClick={()=>onclick("save")}>사용자 추가</button>
       </div>
       <table className="table table-hover mt-3">
         <thead className="table-dark">
